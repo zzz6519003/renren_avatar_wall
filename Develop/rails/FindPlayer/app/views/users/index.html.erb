@@ -1,0 +1,8 @@
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= link_to user.email %></td>
+        <td><%= link_to user.longitude %></td>
+
+
+      </tr>
+    <% end %>

@@ -1,0 +1,5 @@
+<%= form_for current_user, :url => url_for(:controller => 'users', :action => 'change_location') do |f| %>
+	<%= f.text_field :latitude  %>
+	<%= f.text_field :longitude %>
+	<%= f.submit %>
+<% end %>
