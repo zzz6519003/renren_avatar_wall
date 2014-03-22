@@ -1,4 +1,5 @@
 FindPlayer::Application.routes.draw do
+
   root 'users#index'
   get "users/list"
   devise_for :users

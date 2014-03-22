@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   def authenticate_user_from_token!
     user_token = params[:user_token].presence
     user       = user_token && User.find_by_authentication_token(user_token.to_s)
- 
+
     if user
       # Notice we are passing store false, so the user is not
       # actually stored in the session and a token is needed
