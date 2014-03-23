@@ -17,4 +17,18 @@ class UsersController < ApplicationController
 	def change_location_get
 		
 	end
+
+	def find_player
+		users = User.all
+		minimum_distance = 99999
+		nearest_user = current_user
+		users.each { |e|
+			distance = (e.latitude - current_user.latitude).abs + (e.longitude - current_user.longitude).abs
+			if distance > minimum_distance
+				minimum_distance = distance
+				nearest_user = e
+			end
+		}
+		render nearest_user.inspect
+	end
 end

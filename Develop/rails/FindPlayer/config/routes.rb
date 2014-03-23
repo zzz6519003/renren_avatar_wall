@@ -5,6 +5,7 @@ FindPlayer::Application.routes.draw do
   devise_for :users
   get 'change_location' => 'users#change_location'
   patch 'change_location' => 'users#change_location'
+  get 'find_player' => 'users#find_player'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
