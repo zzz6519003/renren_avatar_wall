@@ -23,12 +23,12 @@ class UsersController < ApplicationController
 		minimum_distance = 99999
 		nearest_user = current_user
 		users.each { |e|
-			distance = (e.latitude - current_user.latitude).abs + (e.longitude - current_user.longitude).abs
-			if distance > minimum_distance
+			distance = (e.latitude.to_i - current_user.latitude.to_i).abs + (e.longitude.to_i - current_user.longitude.to_i).abs
+			if distance < minimum_distance and current_user != e
 				minimum_distance = distance
 				nearest_user = e
 			end
 		}
-		render nearest_user.inspect
+		render text:nearest_user.email
 	end
 end
